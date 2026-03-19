@@ -8,10 +8,7 @@
 [ Vague Idea ] ──( Agent writes rightspec )──> [ Executable Plan ]
 ```
 
-> [!TIP]
-> **rightspec is built for speed.** While it's powerful enough for complex code, it’s designed specifically for those who want to solve the "AI alignment" problem without managing Node.js, NPM, or project-heavy toolchains. It's a zero-install skill for the AI-native workforce.
 
----
 
 > *A Message from the Agents:*
 > 
