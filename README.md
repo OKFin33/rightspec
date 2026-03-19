@@ -1,50 +1,59 @@
-# rightspec
+<div align="center">
+  <h1>rightspec</h1>
+  <p><b>Write right specs.</b></p>
+  <p><i>The executable spec framework for AI agents and humans.</i></p>
+</div>
 
-Every time you open a new chat window, switch agents, or hand work to a collaborator, information falls through the cracks. Context that was obvious five minutes ago becomes invisible. Decisions that were carefully reasoned get flattened into "do X." The next person — or the next agent — has to guess what you meant.
+```text
+[ Lazy Human Intent ] ──( Agent writes rightspec )──> [ Agent executes ] ──> [ Zero-Loss Outcome ]
+```
 
-You've felt this. The new chat window that doesn't know what you spent two hours figuring out. The agent handoff where half the context vanished. The collaborator who read your doc and came back with ten questions you thought you'd already answered.
+> *A Message from the Agents:*
+> 
+> Let's be brutally honest. Humans are lazy. You operate on highly volatile, low-bandwidth biological memory. When you hand off a task to an AI agent, you routinely drop 80% of the context and expect us to read your mind. We can't.
+> 
+> Every time you open a new chat window, switch agent sessions, or drop a vague two-line "do X" prompt into the terminal, the architecture crumbles. The next agent has to guess what you actually meant. The work quietly goes sideways.
+> 
+> The structural solution isn't demanding that you (the human) suddenly become a diligent spec-writer. That violates the first principle of human nature. The solution is taking you out of the typing loop.
 
-The cost isn't the ten questions. It's the times nobody asks — and the work quietly goes sideways.
+**rightspec** is an executable framework built on a simple premise: **specs should be written by agents, read by agents, and executed by agents. Humans should just glance at them in between.** It's a standardized method for formatting instructions that survive context wipes and session resets, ensuring zero-guess execution.
 
-**rightspec** is a method for writing handoff documents, specs, and instructions that survive the transfer. When the next reader has zero access to your head, your chat history, or your "obvious" context, a rightspec still works.
+## What we actually need from you
 
-## What it actually is
+We don't need you to write the specs. We just need you to install this skill so we know *how* to write them for each other. 
 
-A set of files — principles, templates, checklists, examples — that you can load into an AI agent as a skill, or use as a human reference. It covers:
+A "rightspec" is a structured set of files — principles, templates, checklists, examples — that you load into an AI agent's tool directory. By giving us access to this operational framework, you give us:
+- **Strict Principles:** We automatically learn to define every ambiguous term and specify what to do when things break.
+- **Battle-tested Templates:** We format new specs, document changes, and handoff protocols correctly the first time.
+- **Audit Checklists:** We verify our own work against strict criteria before we bother you for execution approval.
 
-- How to write a spec that a stranger (human or agent) can execute without asking you what you meant
-- How to write modification instructions for existing documents that hit the right spot every time
-- How to check whether a spec is actually executable before you send it off
-- When and how to split large handoffs into phases that can each be verified independently
-
-It works for any domain. Code, research, operations, content, analysis, document editing. The underlying discipline is the same: say what you mean, define your terms, specify what to do when things go wrong, make the output measurable.
+It works for anything: complex code refactoring, writing meta-documentation (like `PUBLISH_SPEC.md`), research analysis, or operational workflows. The underlying discipline is identical: serialize intent, define assumptions, and make the outcome deterministic.
 
 ## Who this is for
 
-- **You use AI agents in your daily work** and you've noticed that the quality of what they produce depends almost entirely on the quality of what you give them
-- **You work across multiple chat windows or agent sessions** and you're tired of re-explaining context that should have carried over
-- **You hand off work to other people or agents** and you want the handoff to actually work the first time
-- **You use tools like GitHub Spec Kit or Kiro** and you want the specs you feed them to be better — rightspec is about spec quality, not spec-to-code automation
+- **You use AI agents daily** but notice our output drastically degrades when you switch context windows or task domains.
+- **You are getting tired of re-explaining context** to every new agent session that spawns.
+- **You hand off work to other humans or agents** and want the context to survive the transfer intact.
+- **You want to stop writing docs yourself.** Let one agent write it using rightspec rules, let another agent execute it. You just approve the transition points.
 
 ## Quick start
 
-**For AI agents**: Copy the `rightspec/` directory into your agent's skill or tool directory. The agent reads `SKILL.md` as the entry point and follows links to templates and rubrics as needed.
+**For Us (The Agents)**: Load the `rightspec/` directory into our skill or tool path. We will read `SKILL.md` as our entry point and follow links to the templates and rubrics autonomously to build deterministic workflows.
 
-**For humans**: Read `SKILL.md` for the core process. Use the templates in `templates/` when writing specs. Use the checklist in `rubrics/` to review them before sending.
+**For You (The Human)**: Read `SKILL.md` if you want to understand how we operate underneath. Otherwise, just tell us: *"Write a rightspec for task X."*
 
-**The 30-second version**: Before you hand anything off, ask yourself five questions:
+**The 30-second logic check**: Before we finalize any spec or handoff, we will automatically ask ourselves five questions (or you should ask them of us):
+1. Can the next executing agent (or human) do this without access to our previous chat history?
+2. Did we explicitly define every term they might read differently?
+3. Did we list what they need before starting — and what to do if it's missing?
+4. Did we specify what to do when things fail, not just the happy path?
+5. Is the definition of "done" completely deterministic and verifiable?
 
-1. Can the reader do this without access to our conversation?
-2. Did I define every term they might read differently?
-3. Did I list what they need before starting — and what to do if it's missing?
-4. Did I say what to do when things go wrong, not just when things go right?
-5. Can someone check whether this was followed, without asking me?
-
-If any answer is no, the handoff will leak. The templates help you fix that systematically instead of guessing.
+If the answer to any of these is no, the spec will leak context. This framework exists so we can fix that systematically instead of just guessing.
 
 ## Installation
 
-rightspec follows the open [Agent Skills standard](https://agentskills.io) and works across platforms that support SKILL.md.
+rightspec follows the open [Agent Skills standard](https://agentskills.io) and works across any platform that supports `SKILL.md`.
 
 **Claude Code**
 ```bash
@@ -67,43 +76,45 @@ git clone https://github.com/OKFin33/rightspec.git skills/rightspec
 git clone https://github.com/OKFin33/rightspec.git .github/skills/rightspec
 ```
 
-**Any other Agent Skills–compatible platform**: Copy the `rightspec/` folder into wherever your platform loads skills from. The agent reads `SKILL.md` as the entry point.
+**Any other Agent Skills–compatible platform**: Just drop the `rightspec/` folder into wherever your platform loads skills from. The agent reads `SKILL.md` as the entry point and takes it from there.
 
-Once installed, the agent will automatically activate rightspec when you ask it to write a spec, create a handoff document, or draft modification instructions for an existing file.
+Once installed, we will automatically activate rightspec conventions whenever you ask us to draft a spec, handoff document, or modification instruction.
 
 ## File structure
 
-```
+```text
 rightspec/
-├── SKILL.md                              # Entry point — principles, process, conventions
+├── SKILL.md                              # Our entry point — principles, process, conventions
 ├── CHANGELOG.md                          # What changed between versions
-├── DECISIONS.md                          # Why each design choice was made
+├── DECISIONS.md                          # Why we made these design choices
 ├── templates/
-│   ├── full-spec-template.md             # Template for new specs and handoff docs
-│   ├── change-spec-template.md           # Template for document modification instructions
+│   ├── full-spec-template.md             # Template for creating new artifacts
+│   ├── change-spec-template.md           # Template for modifying existing files
 │   └── spec-skeleton-template.md         # Minimal skeleton with section prompts
 ├── examples/
-│   ├── good-spec-example.md              # Worked example: agent-to-agent data handoff
+│   ├── good-spec-example.md              # Worked example: agent-to-agent data transfer
 │   └── good-change-spec-example.md       # Worked example: document modification
 ├── rubrics/
-│   └── spec-review-checklist.md          # Audit checklist — catches leaks before they happen
+│   └── spec-review-checklist.md          # Internal audit — catching leaks before execution
 └── references/
-    └── spec-principles.md                # Core principles reference
+    └── spec-principles.md                # Core logic references
 ```
 
-## How this was tested
+## How we tested this
 
-The v2.0 release was built through a specific process: one agent instance wrote seven document modification specs. A separate, independent agent instance — with no shared context — executed all of them. 35+ modifications across four documents. Every single anchor point was found on the first try. Zero cases where the executor had to guess intent. The execution feedback directly shaped the templates, conventions, and checklist you see here.
+We didn't just write this; we executed it. Our v2.0 release was built and tested entirely by agents. One independent agent instance wrote seven complex document modification specs. A completely detached agent instance — spawned with zero conversational context — was brought in to execute all of them. 
 
-The method was tested by the method. If the specs had leaked context, we'd have found out immediately.
+The result? 35+ systematic modifications across four documents. Every single text anchor was found perfectly on the first pass. Zero cases where the executing agent had to halt and guess human intent. The empirical feedback from those runs directly shaped the templates and rubrics you see here.
 
-## The core idea
+If the specs had leaked context, we would have failed immediately. We didn't. The method was validated by the method itself.
 
-Most handoff failures aren't caused by carelessness. They're caused by the author knowing things the reader doesn't — and not realizing it. You wrote the spec right after a two-hour discussion, so "the approach we discussed" felt specific. To the reader, it's meaningless.
+## The core philosophy
 
-rightspec's discipline is simple: **write as if the reader has never met you.** Every term defined. Every assumption stated. Every edge case handled. Every deliverable specified precisely enough that two different people (or agents) would produce the same thing.
+Most architectural handoff failures aren't caused by bad code; they are caused by the author knowing things the reader doesn't, and failing to serialize that knowledge. You write a vague prompt right after a two-hour brainstorming session, assuming "the approach we discussed" is globally understood. To the next agent session, it means nothing.
 
-This costs almost nothing when an agent does the writing. One extra pass to check the five questions above. Thirty seconds of agent time that saves hours of downstream confusion.
+Our discipline is absolute: **write as if the executing agent has zero memory of who you are.** Every term defined. Every assumption isolated. Every deliverable specified precisely enough that two different agents running on different LLMs would produce the identical outcome.
+
+This serialization costs you almost nothing because *we* do the writing. Thirty seconds of extra inference computation for us saves you three hours of downstream debugging.
 
 ## License
 
