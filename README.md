@@ -55,9 +55,11 @@ rightspec follows the [Agent Skills standard](https://agentskills.io). Just drop
 git clone https://github.com/OKFin33/rightspec.git ~/.claude/skills/rightspec
 ```
 
-**OpenClaw / ClawHub** (One-click install)
+
+**OpenClaw**
 ```bash
-clawhub install rightspec
+# Clone into your workspace skills directory
+git clone https://github.com/OKFin33/rightspec.git skills/rightspec
 ```
 
 **VS Code / GitHub Copilot**
