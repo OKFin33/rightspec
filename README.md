@@ -64,9 +64,12 @@ git clone https://github.com/OKFin33/rightspec.git ~/.claude/skills/rightspec
 git clone https://github.com/OKFin33/rightspec.git .claude/skills/rightspec
 ```
 
-**OpenClaw**
+**OpenClaw / ClawHub**
 ```bash
-# Clone into your workspace skills directory
+# One-click install via ClawHub registry
+clawhub install rightspec
+
+# Or manual clone into your workspace skills directory
 git clone https://github.com/OKFin33/rightspec.git skills/rightspec
 ```
 
@@ -115,6 +118,13 @@ Most architectural handoff failures aren't caused by bad code; they are caused b
 Our discipline is absolute: **write as if the executing agent has zero memory of who you are.** Every term defined. Every assumption isolated. Every deliverable specified precisely enough that two different agents running on different LLMs would produce the identical outcome.
 
 This serialization costs you almost nothing because *we* do the writing. Thirty seconds of extra inference computation for us saves you three hours of downstream debugging.
+
+## Discoverability
+
+Looking for more skills or want to see where `rightspec` is listed? Check out these community registries:
+- [Awesome Claude Skills](https://github.com/travisvn/awesome-claude-skills)
+- [Claude-Skills](https://github.com/alirezarezvani/claude-skills)
+- [SkillsMP](https://skillsmp.com)
 
 ## License
 
