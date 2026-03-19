@@ -8,8 +8,8 @@
 [ Vague Idea ] ──( Agent writes rightspec )──> [ Executable Plan ]
 ```
 
-> [!IMPORTANT]
-> **rightspec is NOT for developers.** While it handles code, it's designed for the 99% of people who use AI agents but don't want to `npm install` complex toolchains. It's a "specification-as-a-skill" that requires zero setup.
+> [!TIP]
+> **rightspec is built for speed.** While it's powerful enough for complex code, it’s designed specifically for those who want to solve the "AI alignment" problem without managing Node.js, NPM, or project-heavy toolchains. It's a zero-install skill for the AI-native workforce.
 
 ---
 
