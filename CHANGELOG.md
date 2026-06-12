@@ -1,10 +1,43 @@
 # Changelog
 
+## v3.0 (2026-06-12)
+
+**Rebuilt around partition — minimize the LLM surface.**
+
+rightspec is now a methodology, not a template library. Its core is a *judgment*: partition every
+task into what is structurable (→ schema / typed contracts / tool policy) and the irreducible
+natural-language judgment core (the only place prose belongs). New first-class behavior — **the
+gate**: if a task can be fully structured, it is a function; the skill says "write code, don't use
+an LLM," and producing *no spec* is a correct outcome.
+
+### Changed
+- New spine: `references/partition.md` (the heart) replaces the old principles-first framing.
+- Four modes → two: cut the generic Full Spec; folded Skeleton into the templates and Audit into
+  the review checklist. Spec mode (author an execution handoff) and Change Spec mode (modify a
+  document) remain — they genuinely need different precision.
+- Change Spec realigned to the partition view: modifications are a **structured operation list** (a
+  typed patch); prose is reserved for the thin judgment residue. The evidence-backed conventions
+  (two-endpoint anchors, directional operations, complete-replacement on structural change,
+  phasing, temporary numbering, execution-environment warnings) are preserved.
+- Scope sharpened to **agent-writes / agent-reads**; PRD / product-requirement use cases removed
+  (that is a different lane).
+
+### File structure
+- `references/`: `partition.md`, `spec-mode.md`, `change-spec-mode.md`, `review-checklist.md`,
+  `examples.md`, `decisions.md`.
+- `templates/`: `spec.md`, `change-spec.md`.
+- Removed: top-level `DECISIONS.md` (→ `references/decisions.md`), `rubrics/`
+  (→ `references/review-checklist.md`), `references/spec-principles.md` (→ `references/partition.md`),
+  the old `templates/*-template.md`, and `examples/` (→ `references/examples.md`).
+
+---
+
 ## v2.0 (2026-03-19)
 
 **New capability: Change Spec mode**
 
-Added a fourth output mode for specifications that modify existing documents rather than creating new ones. This was the primary capability gap — v1.0 only handled new-document specs.
+Added a fourth output mode for specifications that modify existing documents rather than creating
+new ones. This was the primary capability gap — v1.0 only handled new-document specs.
 
 ### SKILL.md
 - Added Change Spec to Output Modes
