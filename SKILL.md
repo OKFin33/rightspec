@@ -16,9 +16,9 @@ description: >-
 # rightspec
 
 rightspec is a **methodology, not a template library**. Its core act is a *judgment*, not a
-fill-in form: figure out what an agent handoff actually needs, push everything that can be
-structured out of the prose, and keep only the small residue that genuinely requires an LLM.
-The templates downstream are scaffolding — this judgment is the point.
+fill-in form: partition what an agent handoff needs into what can be structured and what genuinely
+needs an LLM, then deliver **one spec that combines both** — structure where structurable, natural
+language where not. The templates downstream are scaffolding — this partition is the point.
 
 ## What an agent spec actually is
 
@@ -26,22 +26,32 @@ This applies to the **agent-writes, agent-reads** case: an agent authors the han
 agent executes it. A human being able to read it is an optional bonus, not the premise — which is
 exactly what separates this from a PRD (human author, human / organization audience).
 
-An agent executing a handoff does not need a document. It needs exactly the **irreducible
-natural-language judgment** the task requires — and nothing that could have been a schema, a
-tool, or plain code.
+An agent spec is **one artifact with two parts**: a **structured envelope** — the data and
+contract the task can pin down (inputs, output contract, tool policy, enums, thresholds), written
+*as structure* — and a **natural-language judgment core**, the irreducible part that needs an
+LLM's understanding. Write schema where it can be schema, prose where it genuinely needs judgment;
+the deliverable is the two combined. (If a task has *no* judgment core at all, see the gate below
+— then it should not be a spec, or an LLM, at all.)
 
 The sharpest edge of the methodology:
 
 > **If you can fully specify a task — fixed inputs, fixed rules, fixed outputs — it is a
 > function. Write code and call it (RPC). Do not write a spec, and do not use an LLM.**
 
-You reach for an LLM — and therefore for a spec — *only* for the part that resists being
-structured: open-ended judgment. That part, and only that part, is what the spec carries, in
-natural language, because language is the only interface to an LLM's understanding.
+You reach for an LLM only for the part that resists being structured: open-ended judgment. That
+part is the spec's **judgment core**, carried in natural language because language is the only
+interface to an LLM's understanding. The spec still carries the structured envelope alongside it —
+the executor needs both the fixed contract and the judgment. The LLM's *surface* is only the prose
+part; keep it small.
 
 Reliability follows directly: **the smaller the natural-language surface you hand an LLM, the
 more reliable, testable, and cheap the system.** A spec that is mostly prose is usually a spec
 that failed to structure what it could have.
+
+The spec's **container is situational**: a structured container (JSON / YAML — the envelope as
+fields, the judgment as string fields) is natural for agent-to-agent; Markdown when a human also
+reads it. The format is not the point — the **partition (schema + NL)** and the **agent-to-agent
+handoff** are the first principles.
 
 ## Always partition first
 
@@ -62,8 +72,8 @@ escalate.
 **3. The minimize-LLM-surface gate.** Look at the residue after partitioning:
 - **No NL residue** → this is a function. Tell the user to write code / an RPC / a tool, not a
   spec — and not to use an LLM. Stop here. Saying this is a *success*, not a failure of the skill.
-- **A specific NL residue** → that residue is your spec. Everything else ships as structure
-  beside it.
+- **A specific NL residue** → write the spec as the **structured envelope (Catalog A, as structure)
+  plus that NL residue (Catalog B)** — both combined are the spec.
 
 ## Pick a mode (only after partitioning)
 
@@ -76,7 +86,7 @@ If the executor is not yet known, write **Executor: TBD** and spec for the most 
 plausible executor (a generalist agent with no context). A human can skip detail an agent needs;
 an agent cannot recover context a spec silently assumed.
 
-## Spec mode — write the judgment core
+## Spec mode — assemble the spec (envelope + judgment core)
 
 Ship the structured envelope as structure, then write the NL core so a context-less executor can
 act on it: zero-context complete, the three failure categories handled (external / judgement-

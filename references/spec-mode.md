@@ -1,4 +1,4 @@
-# Spec mode — writing the judgment core
+# Spec mode — assembling the spec (envelope + judgment core)
 
 Use this after you have partitioned (`partition.md`). By now you know which pieces are structure
 (Catalog A) and which are the irreducible judgment core (Catalog B). Spec mode assembles both

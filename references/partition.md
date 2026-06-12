@@ -76,8 +76,10 @@ After partitioning, look at Catalog B for this task:
   user: write the code / tool / RPC, call it deterministically, and keep the LLM out of the loop.
   Writing no spec is the correct output. *Reaching this conclusion is a success of the method, not
   a failure to produce a spec.*
-- **Non-empty** — that residue is your spec's core. Write it (Spec mode or Change Spec mode);
-  everything in Catalog A ships as structure beside it.
+- **Non-empty** — write the spec as **Catalog A (emitted as structure) + Catalog B (the NL core),
+  combined** — both halves are the deliverable (Spec mode or Change Spec mode). The container can
+  be a structured one (JSON / YAML) or Markdown if a human also reads it; the partition is what
+  matters, not the format.
 
 **Worked example — "this should not be an LLM":**
 
